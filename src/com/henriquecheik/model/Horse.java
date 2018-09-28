@@ -25,29 +25,31 @@ public class Horse{
     public void move(HorseMovement movement) {
         switch (movement) {
             case UP_RIGHT:
-                position.incrementPosition(1,-2);
+                position.incrementPosition(-2,1);
                 break;
             case UP_LEFT:
-                position.incrementPosition(-1, -2);
-                break;
-            case LEFT_UP:
                 position.incrementPosition(-2, -1);
                 break;
-            case LEFT_DOWN:
-                position.incrementPosition(-2, 1);
+            case LEFT_UP:
+                position.incrementPosition(-1, -2);
                 break;
-            case DOWN_LEFT:
+            case LEFT_DOWN:
                 position.incrementPosition(-1, 2);
                 break;
-            case DOWN_RIGHT:
-                position.incrementPosition(1, 2);
+            case DOWN_LEFT:
+                position.incrementPosition(-2, 1);
                 break;
-            case RIGHT_DOWN:
+            case DOWN_RIGHT:
                 position.incrementPosition(2, 1);
                 break;
+            case RIGHT_DOWN:
+                position.incrementPosition(1, 2);
+                break;
             case RIGHT_UP:
-                position.incrementPosition(2, -1);
+                position.incrementPosition(1, -2);
                 break;
         }
     }
+
+
 }
