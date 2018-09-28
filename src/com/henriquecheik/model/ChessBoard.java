@@ -19,6 +19,10 @@ public class ChessBoard {
         occupyPosition(position.getX(), position.getY());
     }
 
+    public void occupyPosition(Pos2D position, int index){
+        board[position.getX()][position.getY()] = index;
+    }
+
     public void freePosition(int x, int y){
         board[x][y] = 0;
     }
@@ -38,15 +42,18 @@ public class ChessBoard {
     public void printBoard(){
         for(int i = 0; i<rows; i++) {
             for(int j = 0; j<columns; j++) {
-                System.out.print("| " + board[i][j] + " | ");
+                System.out.printf("| %3d | ", board[i][j]);
             }
             System.out.println();
         }
+        System.out.println("**********************************************");
     }
 
+    public int getRows() {
+        return rows;
+    }
 
-
-
-
-
+    public int getColumns() {
+        return columns;
+    }
 }

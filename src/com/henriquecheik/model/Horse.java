@@ -19,7 +19,8 @@ public class Horse{
     }
 
     public void setPosition(Pos2D position) {
-        this.position = position;
+        this.position.setX(position.getX());
+        this.position.setY(position.getY());
     }
 
     public void move(HorseMovement movement) {
@@ -34,16 +35,45 @@ public class Horse{
                 position.incrementPosition(-1, -2);
                 break;
             case LEFT_DOWN:
-                position.incrementPosition(-1, 2);
+                position.incrementPosition(1, -2);
                 break;
             case DOWN_LEFT:
-                position.incrementPosition(-2, 1);
+                position.incrementPosition(2, -1);
                 break;
             case DOWN_RIGHT:
                 position.incrementPosition(2, 1);
                 break;
             case RIGHT_DOWN:
                 position.incrementPosition(1, 2);
+                break;
+            case RIGHT_UP:
+                position.incrementPosition(-1, 2);
+                break;
+        }
+    }
+
+    public void undoMove(HorseMovement movement) {
+        switch (movement) {
+            case UP_RIGHT:
+                position.incrementPosition(2,-1);
+                break;
+            case UP_LEFT:
+                position.incrementPosition(2, 1);
+                break;
+            case LEFT_UP:
+                position.incrementPosition(1, 2);
+                break;
+            case LEFT_DOWN:
+                position.incrementPosition(-1, 2);
+                break;
+            case DOWN_LEFT:
+                position.incrementPosition(-2, 1);
+                break;
+            case DOWN_RIGHT:
+                position.incrementPosition(-2, -1);
+                break;
+            case RIGHT_DOWN:
+                position.incrementPosition(-1, -2);
                 break;
             case RIGHT_UP:
                 position.incrementPosition(1, -2);

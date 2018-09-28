@@ -9,6 +9,11 @@ public class Pos2D {
         this.y = y;
     }
 
+    public Pos2D(Pos2D position){
+        this.x = position.getX();
+        this.y = position.getY();
+    }
+
     public int getX() {
         return x;
     }
@@ -32,6 +37,6 @@ public class Pos2D {
 
     @Override
     public String toString() {
-        return "x: " + this.x + " y: " + this.y;
+        return "x= " + this.x + " y= " + this.y;
     }
 }
